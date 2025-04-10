@@ -12,9 +12,9 @@ export const handleUpload = async (c: any) => {
   // Verificamos si el archivo es una imagen
   if (file.type.startsWith('image/')) {
     const filePath = await processImage(file)
-    return c.json({ file: serverDomain + '/' + filePath })
+    return c.json({ link: serverDomain + '/' + filePath })
   } else {
     const filePath = await processFile(file)
-    return c.json({ file: serverDomain + '/' + filePath })
+    return c.json({ link: serverDomain + '/' + filePath })
   }
 }
